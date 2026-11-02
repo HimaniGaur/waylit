@@ -11,7 +11,7 @@ Waylit is not a navigation engine: it does not generate routes, fetch live data,
 Waylit is **not currently published to npm**. To build and try the package locally:
 
 ```sh
-git clone https://github.com/agargya123/waylit.git
+git clone https://github.com/HimaniGaur/waylit.git
 cd waylit
 npm ci
 npm run build:sdk
@@ -97,4 +97,4 @@ npm run test:consumer
 npm run dev
 ```
 
-The React demo is supporting evidence, not an SDK dependency. Its routes and observations are synthetic. On the main screen, switch between Better Lighting and Shortest Walk; scroll down to compare synthetic scenarios and try the closure, detour, and incomplete-data controls. The demo calls the SDK evaluator and does not generate directions or make real-world safety claims. See the [hackathon browser evidence](https://github.com/agargya123/waylit/blob/feature/scenario-simulator/docs/hackathon-evidence.md) for recorded verification and its limits.
+The React demo is supporting evidence, not an SDK dependency. Its routes and observations are synthetic. On the main screen, switch between Better Lighting and Shortest Walk; scroll down to compare synthetic scenarios and try the closure, detour, and incomplete-data controls. The demo calls the SDK evaluator and does not generate directions or make real-world safety claims. See the [hackathon browser evidence](https://github.com/HimaniGaur/waylit/blob/feature/scenario-simulator/docs/hackathon-evidence.md) for recorded verification and its limits.

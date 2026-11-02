@@ -8,7 +8,7 @@ To run locally, use `npm ci && npm run dev` from the repository root.
 
 ## Kane CLI checks recorded in the repository
 
-The repository's [hackathon evidence notes](https://github.com/agargya123/waylit/blob/main/docs/hackathon-evidence.md) describe the recorded browser runs and their limits. They document a preset-flow run and a simulator run, including expected recommendations, detour exclusions, unknown data handling, and console checks.
+The repository's [hackathon evidence notes](https://github.com/HimaniGaur/waylit/blob/main/docs/hackathon-evidence.md) describe the recorded browser runs and their limits. They document a preset-flow run and a simulator run, including expected recommendations, detour exclusions, unknown data handling, and console checks.
 
 Local `.evidence` packs are ignored and are not included in the repository or this wiki. The notes state that local/account evidence is not proof of submission to the event team's Proof tab. Do not treat a locally recorded run as team-submitted evidence unless the event page confirms it.
 

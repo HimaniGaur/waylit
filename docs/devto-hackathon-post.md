@@ -16,18 +16,18 @@ What remains unproven matters: the route and observation values are synthetic, a
 
 ## Try it
 
-Repository: https://github.com/agargya123/waylit
+Repository: https://github.com/HimaniGaur/waylit
 
 There is no hosted demo URL currently verified. Run the demo locally:
 
 ```sh
-git clone https://github.com/agargya123/waylit.git
+git clone https://github.com/HimaniGaur/waylit.git
 cd waylit
 npm ci
 npm run dev
 ```
 
-The SDK quickstart and package-build instructions are in the repository [README](https://github.com/agargya123/waylit/blob/main/README.md). The tracked Kane test is [`tests/kane/waylit-evidence-check_test.md`](https://github.com/agargya123/waylit/blob/main/tests/kane/waylit-evidence-check_test.md). Local finalized evidence packs (not committed): `.testmuai/evidence/f9def97e-816f-4d10-9edf-b100e7da1dbe.evidence` and `.testmuai/evidence/8c01bd74-eef2-4a8a-8c4f-caf6038a02ec.evidence`.
+The SDK quickstart and package-build instructions are in the repository [README](https://github.com/HimaniGaur/waylit/blob/main/README.md). The tracked Kane test is [`tests/kane/waylit-evidence-check_test.md`](https://github.com/HimaniGaur/waylit/blob/main/tests/kane/waylit-evidence-check_test.md). Local finalized evidence packs (not committed): `.testmuai/evidence/f9def97e-816f-4d10-9edf-b100e7da1dbe.evidence` and `.testmuai/evidence/8c01bd74-eef2-4a8a-8c4f-caf6038a02ec.evidence`.
 
 ## Submission-ready project description
 

@@ -118,63 +118,66 @@ export function ScenarioSimulator() {
         )}
         {scenarioId === 'shortest-route' && <p className="scenario-sim__fixed-policy">Duration priority keeps the maximum detour at 0 minutes.</p>}
       </section>
-      <div className="scenario-sim__routes">
-        {routes.map((route, index) => {
-          const routeResult = result.routes.find((item) => item.routeId === route.id)
-          const isClosed = scenarioEvaluation.closedRouteIds.includes(route.id)
-          const isRecommended = result.recommendedRouteId === route.id
-          const observations = scenarioEvaluation.observations[route.id]
-          const scoreLabel = isClosed
-            ? 'Not scored · closed'
-            : routeResult?.score === null || routeResult?.score === undefined
-              ? routeResult?.eligible ? 'Score unavailable' : 'Not scored'
-              : `${Math.round(routeResult.score)} / 100`
-          const reason = getRouteReason(route, routeResult, isClosed, result, recommendation, winningResult)
+      <details className="scenario-sim__route-details">
+        <summary>Show route-by-route scores and evidence</summary>
+        <div className="scenario-sim__routes">
+          {routes.map((route, index) => {
+            const routeResult = result.routes.find((item) => item.routeId === route.id)
+            const isClosed = scenarioEvaluation.closedRouteIds.includes(route.id)
+            const isRecommended = result.recommendedRouteId === route.id
+            const observations = scenarioEvaluation.observations[route.id]
+            const scoreLabel = isClosed
+              ? 'Not scored · closed'
+              : routeResult?.score === null || routeResult?.score === undefined
+                ? routeResult?.eligible ? 'Score unavailable' : 'Not scored'
+                : `${Math.round(routeResult.score)} / 100`
+            const reason = getRouteReason(route, routeResult, isClosed, result, recommendation, winningResult)
 
-          return (
-            <article
-              className={`scenario-sim__route ${isRecommended ? 'is-recommended' : ''} ${isClosed ? 'is-closed' : ''}`}
-              key={route.id}
-            >
-              <div className="scenario-sim__route-top">
-                <span className="scenario-sim__number">0{index + 1}</span>
-                <div className="scenario-sim__route-title">
-                  <div className="scenario-sim__route-name">
-                    {route.name}
-                    {isRecommended && <span className="scenario-sim__best">TOP MATCH</span>}
-                    <span className={`scenario-sim__eligibility ${isClosed || routeResult?.eligible === false ? 'is-excluded' : 'is-eligible'}`}>
-                      {isClosed ? 'CLOSED · EXCLUDED' : routeResult?.eligible ? 'ELIGIBLE' : 'INELIGIBLE'}
-                    </span>
+            return (
+              <article
+                className={`scenario-sim__route ${isRecommended ? 'is-recommended' : ''} ${isClosed ? 'is-closed' : ''}`}
+                key={route.id}
+              >
+                <div className="scenario-sim__route-top">
+                  <span className="scenario-sim__number">0{index + 1}</span>
+                  <div className="scenario-sim__route-title">
+                    <div className="scenario-sim__route-name">
+                      {route.name}
+                      {isRecommended && <span className="scenario-sim__best">TOP MATCH</span>}
+                      <span className={`scenario-sim__eligibility ${isClosed || routeResult?.eligible === false ? 'is-excluded' : 'is-eligible'}`}>
+                        {isClosed ? 'CLOSED · EXCLUDED' : routeResult?.eligible ? 'ELIGIBLE' : 'INELIGIBLE'}
+                      </span>
+                    </div>
+                    <p>{route.description}</p>
                   </div>
-                  <p>{route.description}</p>
+                  <div className="scenario-sim__time"><strong>{route.durationMinutes}</strong><span>min</span></div>
                 </div>
-                <div className="scenario-sim__time"><strong>{route.durationMinutes}</strong><span>min</span></div>
-              </div>
-              <div className="scenario-sim__meta">
-                <span className="scenario-sim__score">{scoreLabel}</span>
-                {!isClosed && routeResult && <span>{routeResult.extraMinutes > 0 ? `+${routeResult.extraMinutes} min vs. fastest` : 'Fastest duration'}</span>}
-              </div>
-              {routeResult?.score !== null && routeResult?.score !== undefined && !isClosed && (
-                <div className="scenario-sim__meter" aria-label={`SDK preference score ${Math.round(routeResult.score)} out of 100`}>
-                  <span style={{ width: `${routeResult.score}%` }} />
+                <div className="scenario-sim__meta">
+                  <span className="scenario-sim__score">{scoreLabel}</span>
+                  {!isClosed && routeResult && <span>{routeResult.extraMinutes > 0 ? `+${routeResult.extraMinutes} min vs. fastest` : 'Fastest duration'}</span>}
                 </div>
-              )}
-              <div className="scenario-sim__observations" aria-label={`${route.name} synthetic observations`}>
-                {factors.map((factor) => {
-                  const observation = observations[factor.id]
-                  const freshness = currentFreshness(observation.freshness, route.id, factor.id, routeBLightingCurrent)
-                  return (
-                    <span key={factor.id} className={`scenario-sim__observation is-${freshness}`}>
-                      <b>{factor.label}</b> {formatObservation(factor.id, { ...observation, freshness })}
-                    </span>
-                  )
-                })}
-              </div>
-              <p className={`scenario-sim__reason ${isClosed || routeResult?.eligible === false ? 'is-exclusion' : ''}`}>{reason}</p>
-            </article>
-          )
-        })}
-      </div>
+                {routeResult?.score !== null && routeResult?.score !== undefined && !isClosed && (
+                  <div className="scenario-sim__meter" aria-label={`SDK preference score ${Math.round(routeResult.score)} out of 100`}>
+                    <span style={{ width: `${routeResult.score}%` }} />
+                  </div>
+                )}
+                <div className="scenario-sim__observations" aria-label={`${route.name} synthetic observations`}>
+                  {factors.map((factor) => {
+                    const observation = observations[factor.id]
+                    const freshness = currentFreshness(observation.freshness, route.id, factor.id, routeBLightingCurrent)
+                    return (
+                      <span key={factor.id} className={`scenario-sim__observation is-${freshness}`}>
+                        <b>{factor.label}</b> {formatObservation(factor.id, { ...observation, freshness })}
+                      </span>
+                    )
+                  })}
+                </div>
+                <p className={`scenario-sim__reason ${isClosed || routeResult?.eligible === false ? 'is-exclusion' : ''}`}>{reason}</p>
+              </article>
+            )
+          })}
+        </div>
+      </details>
       {recommendation ? (
         <aside className="scenario-sim__recommendation">
           <span aria-hidden="true">✳</span>

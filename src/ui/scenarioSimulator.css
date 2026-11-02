@@ -160,6 +160,21 @@
   font-size: 11px;
 }
 
+.scenario-sim__route-details {
+  margin: 18px 0;
+}
+
+.scenario-sim__route-details summary {
+  color: #344f40;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.scenario-sim__route-details[open] summary {
+  margin-bottom: 12px;
+}
+
 .scenario-sim__routes {
   display: grid;
   gap: 10px;

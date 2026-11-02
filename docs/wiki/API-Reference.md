@@ -20,7 +20,7 @@ Statuses are `recommended`, `provisional`, or `insufficient_data`. Recommendatio
 
 ## Validation and extension
 
-The evaluator rejects invalid input with a descriptive `Error`: for example duplicate or empty IDs, invalid durations or bounds, out-of-bounds observations, unknown factor keys, invalid weights, and negative detour limits. See the [full SDK contract](https://github.com/agargya123/waylit/blob/main/docs/sdk-contract.md) for complete behavior and exact interfaces.
+The evaluator rejects invalid input with a descriptive `Error`: for example duplicate or empty IDs, invalid durations or bounds, out-of-bounds observations, unknown factor keys, invalid weights, and negative detour limits. See the [full SDK contract](https://github.com/HimaniGaur/waylit/blob/main/docs/sdk-contract.md) for complete behavior and exact interfaces.
 
 `ScoringStrategy` is the extension point for scoring. The evaluator retains responsibility for validation, detour eligibility, result status, and recommendation selection. The demo fixture is not part of the package API.
 

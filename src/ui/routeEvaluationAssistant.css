@@ -125,6 +125,17 @@
   border-top: 1px solid var(--assistant-line);
 }
 
+.evaluation-assistant__evidence summary {
+  color: var(--assistant-ink);
+  font-size: 16px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.evaluation-assistant__evidence[open] summary {
+  margin-bottom: 12px;
+}
+
 .evaluation-assistant__freshness {
   margin-bottom: 14px;
 }

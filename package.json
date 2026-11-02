@@ -6,9 +6,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/agargya123/waylit.git"
+    "url": "https://github.com/HimaniGaur/waylit.git"
   },
-  "homepage": "https://github.com/agargya123/waylit#readme",
+  "homepage": "https://github.com/HimaniGaur/waylit#readme",
   "files": [
     "dist/sdk",
     "LICENSE",

@@ -26,5 +26,5 @@ The SDK input has no freshness or provenance fields. If the host considers an ob
 
 A preset with `maxExtraMinutes: 0` keeps only the fastest option(s) eligible. If the eligible option has incomplete observations, Waylit can still select by duration and stable route ID, marking the result provisional and explaining that no environmental superiority is implied. For normal scored comparisons, equal scores break by shorter duration, then lexicographic route ID.
 
-For identical inputs and strategy, results are deterministic. See the [SDK contract](https://github.com/agargya123/waylit/blob/main/docs/sdk-contract.md) for exact rules.
+For identical inputs and strategy, results are deterministic. See the [SDK contract](https://github.com/HimaniGaur/waylit/blob/main/docs/sdk-contract.md) for exact rules.
 

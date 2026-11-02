@@ -97,8 +97,8 @@ export function RouteEvaluationAssistant({ routes, contexts, factors, observatio
       {!validDetourLimit && <p className="evaluation-assistant__error" role="alert">Enter a finite, non-negative maximum extra time.</p>}
       {message && <p className="evaluation-assistant__error" role="alert">{message}</p>}
 
-      <section className="evaluation-assistant__evidence" aria-labelledby="evaluation-evidence-title">
-        <h3 id="evaluation-evidence-title">Evidence in this synthetic scenario</h3>
+      <details className="evaluation-assistant__evidence">
+        <summary>Evidence in this synthetic scenario</summary>
         <p className="evaluation-assistant__freshness">No sources or timestamps are inferred. Supplied freshness is shown per observation; missing values remain unknown.</p>
         <div className="evaluation-assistant__routes">
           {evidence.map((route) => (
@@ -112,7 +112,7 @@ export function RouteEvaluationAssistant({ routes, contexts, factors, observatio
             </article>
           ))}
         </div>
-      </section>
+      </details>
 
       {proposal && (
         <section className="evaluation-assistant__proposal" aria-labelledby="evaluation-policy-title">

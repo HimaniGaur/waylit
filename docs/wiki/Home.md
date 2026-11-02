@@ -26,6 +26,6 @@ The SDK source and tests support these goals: inputs are passed into a standalon
 
 ## Project
 
-- [Source repository](https://github.com/agargya123/waylit)
-- [SDK contract](https://github.com/agargya123/waylit/blob/main/docs/sdk-contract.md)
+- [Source repository](https://github.com/HimaniGaur/waylit)
+- [SDK contract](https://github.com/HimaniGaur/waylit/blob/main/docs/sdk-contract.md)
 

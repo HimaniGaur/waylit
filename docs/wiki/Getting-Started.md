@@ -5,7 +5,7 @@
 Waylit is not currently published to npm. Build and pack it from the repository, then install the tarball into a consumer project:
 
 ```sh
-git clone https://github.com/agargya123/waylit.git
+git clone https://github.com/HimaniGaur/waylit.git
 cd waylit
 npm ci
 npm run build:sdk

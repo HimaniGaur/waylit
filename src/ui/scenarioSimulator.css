@@ -1,0 +1,426 @@
+.scenario-sim {
+  width: min(100%, 850px);
+  margin: 42px auto;
+  color: #172923;
+}
+
+.scenario-sim__header,
+.scenario-sim__route-top,
+.scenario-sim__route-name,
+.scenario-sim__meta {
+  display: flex;
+  align-items: center;
+}
+
+.scenario-sim__header {
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.scenario-sim__eyebrow {
+  color: #789441;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.scenario-sim__header h2 {
+  margin: 5px 0 6px;
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -.5px;
+}
+
+.scenario-sim__header p,
+.scenario-sim__route-title p {
+  margin: 0;
+  color: #758078;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.scenario-sim__data-label {
+  flex: 0 0 auto;
+  border: 1px solid #d8dfc8;
+  border-radius: 20px;
+  padding: 8px 11px;
+  color: #657b37;
+  background: #f0f2e8;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.scenario-sim__choices {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.scenario-sim__choice {
+  min-height: 92px;
+  padding: 12px;
+  border: 1px solid #dedfd5;
+  border-radius: 9px;
+  color: #58675d;
+  background: #fbfaf6;
+  text-align: left;
+  cursor: pointer;
+}
+
+.scenario-sim__choice strong,
+.scenario-sim__choice span {
+  display: block;
+}
+
+.scenario-sim__choice strong {
+  margin-bottom: 5px;
+  color: #344f40;
+  font-size: 12px;
+}
+
+.scenario-sim__choice span {
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.scenario-sim__choice.is-active {
+  border-color: #30483b;
+  color: #f3f4e9;
+  background: #30483b;
+  box-shadow: 0 0 0 1px #30483b;
+}
+
+.scenario-sim__choice.is-active strong {
+  color: #f3f4e9;
+}
+
+.scenario-sim__what-if {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  min-height: 75px;
+  margin: 15px 0;
+  padding: 12px 16px;
+  border: 1px solid #e2e3da;
+  border-radius: 9px;
+  background: #f1f1e9;
+}
+
+.scenario-sim__what-if > div > strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+.scenario-sim__range {
+  width: min(350px, 55%);
+}
+
+.scenario-sim__range span {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #58675d;
+  font-size: 11px;
+}
+
+.scenario-sim__range b {
+  color: #344f40;
+}
+
+.scenario-sim__range input {
+  width: 100%;
+  margin: 10px 0 0;
+  accent-color: #617a43;
+  cursor: pointer;
+}
+
+.scenario-sim__toggle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #344f40;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.scenario-sim__toggle input {
+  width: 17px;
+  height: 17px;
+  accent-color: #617a43;
+}
+
+.scenario-sim__fixed-policy {
+  margin: 0;
+  color: #69756e;
+  font-size: 11px;
+}
+
+.scenario-sim__route-details {
+  margin: 18px 0;
+}
+
+.scenario-sim__route-details summary {
+  color: #344f40;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.scenario-sim__route-details[open] summary {
+  margin-bottom: 12px;
+}
+
+.scenario-sim__routes {
+  display: grid;
+  gap: 10px;
+}
+
+.scenario-sim__route {
+  padding: 15px 17px 13px;
+  border: 1px solid #e2e3da;
+  border-radius: 10px;
+  background: #fbfaf7;
+}
+
+.scenario-sim__route.is-recommended {
+  border-color: #9cae75;
+  box-shadow: 0 0 0 1px #9cae75;
+}
+
+.scenario-sim__route.is-closed {
+  background: #f6f1ec;
+}
+
+.scenario-sim__route-top {
+  gap: 12px;
+}
+
+.scenario-sim__number {
+  width: 25px;
+  color: #b4b9a9;
+  font-family: Georgia, serif;
+  font-size: 16px;
+}
+
+.scenario-sim__route-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.scenario-sim__route-name {
+  flex-wrap: wrap;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.scenario-sim__best,
+.scenario-sim__eligibility {
+  border-radius: 12px;
+  padding: 4px 7px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .7px;
+}
+
+.scenario-sim__best {
+  color: #657b37;
+  background: #e9eddc;
+}
+
+.scenario-sim__eligibility.is-eligible {
+  color: #59713c;
+  background: #eef1e5;
+}
+
+.scenario-sim__eligibility.is-excluded {
+  color: #9b5c43;
+  background: #f5e7df;
+}
+
+.scenario-sim__route-title p {
+  margin-top: 4px;
+  font-size: 10px;
+}
+
+.scenario-sim__time {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.scenario-sim__time strong {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.scenario-sim__time span {
+  color: #858e84;
+  font-size: 10px;
+}
+
+.scenario-sim__meta {
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 12px 0 7px 37px;
+  color: #788679;
+  font-size: 10px;
+}
+
+.scenario-sim__score {
+  color: #4f6740;
+  font-weight: 700;
+}
+
+.scenario-sim__meter {
+  height: 4px;
+  margin-left: 37px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #ecece4;
+}
+
+.scenario-sim__meter span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #93a96a;
+  transition: width .2s ease;
+}
+
+.scenario-sim__observations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 11px 0 0 37px;
+}
+
+.scenario-sim__observation {
+  border-radius: 4px;
+  padding: 5px 7px;
+  color: #667266;
+  background: #eff0e9;
+  font-size: 9px;
+}
+
+.scenario-sim__observation b {
+  color: #4f5f53;
+  font-weight: 600;
+}
+
+.scenario-sim__observation.is-stale {
+  color: #9a6c43;
+  background: #f5eee5;
+}
+
+.scenario-sim__observation.is-missing {
+  color: #767b78;
+  background: #e9eae7;
+}
+
+.scenario-sim__route.is-closed .scenario-sim__observation {
+  opacity: .75;
+}
+
+.scenario-sim__reason {
+  margin: 10px 0 0 37px;
+  color: #6f786e;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.scenario-sim__reason.is-exclusion {
+  color: #9a614c;
+}
+
+.scenario-sim__recommendation {
+  display: flex;
+  gap: 11px;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 9px;
+  color: #344f40;
+  background: #edf0e4;
+}
+
+.scenario-sim__recommendation > span {
+  color: #758e42;
+  font-size: 18px;
+}
+
+.scenario-sim__recommendation strong {
+  font-size: 12px;
+}
+
+.scenario-sim__recommendation p {
+  margin: 5px 0 0;
+  color: #6f786e;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.scenario-sim__recommendation .scenario-sim__warning {
+  color: #8b684a;
+}
+
+.scenario-sim__recommendation.is-empty {
+  background: #f5eee5;
+}
+
+.scenario-sim__disclaimer {
+  margin: 14px 0 0;
+  color: #858d84;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  .scenario-sim__choices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .scenario-sim {
+    margin: 30px auto;
+  }
+
+  .scenario-sim__header {
+    align-items: flex-start;
+  }
+
+  .scenario-sim__header h2 {
+    font-size: 25px;
+  }
+
+  .scenario-sim__what-if {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .scenario-sim__range {
+    width: 100%;
+  }
+
+  .scenario-sim__route {
+    padding: 13px 11px;
+  }
+
+  .scenario-sim__meta,
+  .scenario-sim__meter,
+  .scenario-sim__observations,
+  .scenario-sim__reason {
+    margin-left: 29px;
+  }
+
+  .scenario-sim__number {
+    width: 17px;
+  }
+}

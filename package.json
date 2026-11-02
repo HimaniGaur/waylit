@@ -1,0 +1,46 @@
+{
+  "name": "waylit",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Provider-agnostic TypeScript SDK for evaluating and ranking candidate routes.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HimaniGaur/waylit.git"
+  },
+  "homepage": "https://github.com/HimaniGaur/waylit#readme",
+  "files": [
+    "dist/sdk",
+    "LICENSE",
+    "README.md",
+    "docs/sdk-contract.md"
+  ],
+  "main": "./dist/sdk/index.js",
+  "module": "./dist/sdk/index.js",
+  "types": "./dist/sdk/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/sdk/index.d.ts",
+      "import": "./dist/sdk/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "npm run build:sdk && tsc -b && vite build",
+    "build:sdk": "tsc -p tsconfig.sdk.json",
+    "typecheck": "tsc -p tsconfig.sdk.json --noEmit && tsc -b",
+    "test": "vitest run",
+    "test:consumer": "npm run build:sdk && node scripts/consumer-smoke.mjs",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^4.6.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
+  }
+}

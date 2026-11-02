@@ -1,0 +1,229 @@
+.evaluation-assistant {
+  --assistant-ink: #172923;
+  --assistant-muted: #6f7a72;
+  --assistant-line: #dfe3d8;
+  --assistant-paper: #fbfaf6;
+  margin: 8px 0 64px;
+  padding: 28px;
+  border: 1px solid var(--assistant-line);
+  border-radius: 10px;
+  color: var(--assistant-ink);
+  background: var(--assistant-paper);
+}
+
+.evaluation-assistant__heading,
+.evaluation-assistant__controls {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.evaluation-assistant__eyebrow {
+  color: #789441;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.evaluation-assistant h2,
+.evaluation-assistant h3,
+.evaluation-assistant h4,
+.evaluation-assistant p {
+  margin-top: 0;
+}
+
+.evaluation-assistant h2 {
+  margin-bottom: 0;
+  font: 400 28px Georgia, serif;
+}
+
+.evaluation-assistant h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.evaluation-assistant h4 {
+  margin: 16px 0 8px;
+  font-size: 13px;
+}
+
+.evaluation-assistant__tag,
+.evaluation-assistant__intro,
+.evaluation-assistant__freshness {
+  color: var(--assistant-muted);
+  font-size: 12px;
+}
+
+.evaluation-assistant__intro {
+  max-width: 680px;
+  margin: 14px 0 22px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.evaluation-assistant__controls {
+  justify-content: flex-start;
+  align-items: end;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.evaluation-assistant__controls label {
+  display: grid;
+  gap: 7px;
+  color: var(--assistant-ink);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.evaluation-assistant__controls label small {
+  color: var(--assistant-muted);
+  font-weight: 400;
+}
+
+.evaluation-assistant select,
+.evaluation-assistant input {
+  min-width: 220px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #cdd5c8;
+  border-radius: 5px;
+  color: var(--assistant-ink);
+  background: #fff;
+  font: inherit;
+}
+
+.evaluation-assistant input {
+  min-width: 112px;
+  width: 112px;
+}
+
+.evaluation-assistant__button {
+  min-height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  background: #294b3d;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.evaluation-assistant__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.evaluation-assistant__evidence,
+.evaluation-assistant__proposal,
+.evaluation-assistant__result {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--assistant-line);
+}
+
+.evaluation-assistant__evidence summary {
+  color: var(--assistant-ink);
+  font-size: 16px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.evaluation-assistant__evidence[open] summary {
+  margin-bottom: 12px;
+}
+
+.evaluation-assistant__freshness {
+  margin-bottom: 14px;
+}
+
+.evaluation-assistant__routes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.evaluation-assistant__route {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--assistant-line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.evaluation-assistant__route h4 {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+
+.evaluation-assistant__route h4 span,
+.evaluation-assistant__route p {
+  color: var(--assistant-muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.evaluation-assistant__route p {
+  margin: 7px 0 0;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.evaluation-assistant__route p strong {
+  color: var(--assistant-ink);
+}
+
+.evaluation-assistant__proposal p,
+.evaluation-assistant__result p,
+.evaluation-assistant__proposal li,
+.evaluation-assistant__result li {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.evaluation-assistant__proposal ul,
+.evaluation-assistant__result ul {
+  margin: 8px 0 14px;
+  padding-left: 20px;
+}
+
+.evaluation-assistant__recommendation {
+  font-size: 17px !important;
+  font-weight: 700;
+}
+
+.evaluation-assistant__warning,
+.evaluation-assistant__error {
+  color: #8d482d;
+}
+
+@media (max-width: 720px) {
+  .evaluation-assistant {
+    padding: 18px;
+  }
+
+  .evaluation-assistant__heading,
+  .evaluation-assistant__controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .evaluation-assistant__tag {
+    align-self: flex-start;
+  }
+
+  .evaluation-assistant select,
+  .evaluation-assistant input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .evaluation-assistant__routes {
+    grid-template-columns: 1fr;
+  }
+}
